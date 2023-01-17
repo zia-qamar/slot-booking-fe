@@ -3,7 +3,7 @@
 * Node.js
 * yarn
 ## Installation
-* Clone the repository to your local machine `git clone https://github.com/<your-username>/slot-booking.git`
+* Clone the repository to your local machine `git clone https://github.com/zia-qamar/slot-booking-fe.git`
 * Navigate to the front-end folder  `cd slot-booking/`
 * Install the required packages `yarn install`
 ## Configuration
