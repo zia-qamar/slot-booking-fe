@@ -7,7 +7,7 @@
 * Navigate to the front-end folder  `cd slot-booking/`
 * Install the required packages `yarn install`
 ## Configuration
-1. Open the `src/components/SlotBooking.js` file and update the apiURL to match your local backend server.
+1. Open the `config.js` file and update the apiURL to match your local backend server.
 ## Running the app
 1. Start the development server `yarn start`
 2. Open `http://localhost:3000` in your browser

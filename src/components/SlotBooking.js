@@ -3,6 +3,7 @@ import '../index.css';
 import axios from 'axios';
 import Dropdown from './Dropdown';
 import Alert from './Alert';
+import API_URL from '../config';
 
 class SlotBooking extends Component {
     state = {
@@ -29,7 +30,7 @@ class SlotBooking extends Component {
             duration: this.state.duration
         }
 
-        axios.get(`http://localhost:3001/api/v1/slots/new?date=${data.date}&duration=${data.duration}`)
+        axios.get(`${API_URL}/slots/new?date=${data.date}&duration=${data.duration}`)
             .then(response => {
                 this.setState({ possible_slots: response.data.possible_slots });
             })
@@ -39,7 +40,7 @@ class SlotBooking extends Component {
     }
 
     handleBook = (slot) => {
-        axios.post(' http://localhost:3001/api/v1/slots/book',
+        axios.post(` ${API_URL}/slots/book`,
             {start_time: slot.start, end_time: slot.end, duration: this.state.duration}
         )
             .then(response => {
