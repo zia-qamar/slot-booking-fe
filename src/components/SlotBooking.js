@@ -4,6 +4,7 @@ import axios from 'axios';
 import Dropdown from './Dropdown';
 import Alert from './Alert';
 import API_URL from '../config';
+import consumer from '../cable';
 
 class SlotBooking extends Component {
     state = {
@@ -12,6 +13,18 @@ class SlotBooking extends Component {
         possible_slots: [],
         selected_slot: {},
         alert: ''
+    }
+
+    componentDidMount() {
+        this.subscription = consumer.subscriptions.create("SlotChannel", {
+            received: (data) => {
+                console.log(data)
+            },
+        })
+    }
+
+    componentWillUnmount() {
+        this.subscription.unsubscribe()
     }
 
     handleChange = (event) => {
